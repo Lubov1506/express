@@ -8,6 +8,7 @@ const UserController = require('./controllers/user.controller')
 
 app.get('/users', UserController.getAllUsers)
 app.post('/', bodyParser, validateBody, UserController.createUser)
+app.delete('/user/:id', UserController.deleteUser)
 
 app.listen(PORT, () => {
   console.log(`server started on ${PORT} port`)

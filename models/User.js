@@ -6,7 +6,7 @@ class User {
     this.email = email
     this.gender = gender
     this.isSubscribe = isSubscribe
-    this.id = db.size + 1
+    this.id = `${db.size + 1}`
     this.createdAt = new Date()
 
     db.set(this.id, this)
