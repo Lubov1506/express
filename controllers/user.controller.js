@@ -1,10 +1,11 @@
-const users = []
+const User = require('../models/User')
 
-module.exports.createUser = (req, res, next) => {
-    const {body: user} = req
-    user.id = users.length
-    user.createdAt = new Date()
-    delete user.password
-    users.push(user)
-    res.send(users)
-  }
+module.exports.createUser = async (req, res, next) => {
+  const { body: validateBody } = req
+  const user = await new User(validateBody)
+  res.status(201).send(user)
+}
+module.exports.getAllUsers = async (req, res, next) => {
+    const users = await User.findAll()
+    res.status(200).send(users)
+}
