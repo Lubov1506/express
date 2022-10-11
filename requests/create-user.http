@@ -1,0 +1,9 @@
+POST http://127.0.0.1:3000/ HTTP/1.1
+Content-Type: application/json
+
+{"name": "John Smitt",
+"email":"3542ljhug@gmail.com",
+"password":"1234pos",
+"gender":"male",
+"isSubscribe": false
+}
